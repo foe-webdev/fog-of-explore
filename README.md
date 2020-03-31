@@ -6,7 +6,7 @@ This Project is part of a hack event to create a exploration application.
 
 * [Trello board](https://trello.com/b/A38qrQDM/hack-event-2020) - Project Management
 * [Live site](https://fog-of-explore.netlify.com/) - Live site
-* [Netlify](https://app.netlify.com/sites/naughty-lalande-c7df5e/overview) - Hosting service
+* [Netlify](https://app.netlify.com/sites/fog-of-explore/overview) - Hosting platform
 
 ## Getting Started
 
