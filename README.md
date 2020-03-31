@@ -2,6 +2,12 @@
 
 This Project is part of a hack event to create a exploration application.
 
+## Quick Links
+
+* [Trello board](https://trello.com/b/A38qrQDM/hack-event-2020) - Project Management
+* [Live site](https://fog-of-explore.netlify.com/) - Live site
+* [Netlify](https://app.netlify.com/sites/naughty-lalande-c7df5e/overview) - Hosting service
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -107,7 +113,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **Barry Mckeown** - *Content Creator*
 * **Liam Clarke** - *Developer* - [Github](https://github.com/clarke94/)
 * **Paul Hares** - *Developer*
-* **Amantle Craviolatti** - *Developer*
+* **Amantle Craviolatti** - *Developer* - [Github](https://github.com/amanewgirl)
 * **Stuart Denovan** - *Developer* - [Github](https://github.com/black-isle-beef)
 * **John Young** - *Developer*
 
