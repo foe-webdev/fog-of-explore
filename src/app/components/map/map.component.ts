@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import 'ol/ol.css';
-import { Map, View } from 'ol';
+import { Map, View, Geolocation } from 'ol';
 import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
 
@@ -13,11 +13,21 @@ import OSM from 'ol/source/OSM';
 })
 export class MapComponent implements OnInit {
     map: Map;
+    view: View;
 
     constructor() { }
 
     ngOnInit(): void {
+        this.initialiseView();
         this.initialiseMap();
+        this.getGeolocation();
+    }
+
+    initialiseView(): void {
+        this.view = new View({
+            center: [-354400, 7546000],
+            zoom: 12
+        });
     }
 
     initialiseMap(): void {
@@ -28,10 +38,22 @@ export class MapComponent implements OnInit {
                     source: new OSM()
                 })
             ],
-            view: new View({
-                center: [0, 0],
-                zoom: 0
-            })
+            view: this.view
+        });
+    }
+
+    getGeolocation() {
+        const geolocation = new Geolocation({
+            projection: this.view.getProjection(),
+            tracking: true,
+            trackingOptions: {
+                enableHighAccuracy: true
+            }
+        });
+
+        geolocation.on('change', (evt) => {
+            const pos = geolocation.getPosition();
+            this.view.setCenter(pos);
         });
     }
 }
