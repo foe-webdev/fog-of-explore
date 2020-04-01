@@ -115,7 +115,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **Paul Hares** - *Developer*
 * **Amantle Craviolatti** - *Developer* - [Github](https://github.com/amanewgirl)
 * **Stuart Denovan** - *Developer* - [Github](https://github.com/black-isle-beef)
-* **John Young** - *Developer*
+* **John Young** - *Designer*
 
 ## License
 
