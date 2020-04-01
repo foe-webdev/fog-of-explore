@@ -79,15 +79,15 @@ npm start
 
 ### Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ### Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `npm run e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ### And coding style tests
 
-TODO: Add lint tests
+Run `npm run lint` to execute linting via [TSLint](https://palantir.github.io/tslint/) and [Stylelint](https://stylelint.io/).
 
 ## Deployment
 
