@@ -1,1 +1,5 @@
-<div id="map" class="map"></div>
+<mgl-map class="map" [style]="style" [zoom]="zoom" [center]="center">
+    <mgl-control mglGeocoder [countries]="countries"></mgl-control>
+    <mgl-control mglGeolocate></mgl-control>
+    <mgl-control mglNavigation></mgl-control>
+</mgl-map>
