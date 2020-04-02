@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ee9b2aea-5fe6-494d-8817-5c67ce08ab78/deploy-status)](https://app.netlify.com/sites/fog-of-explore/deploys)
+
 # Fog Of Explore
 
 This Project is part of a hack event to create a exploration application.
