@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { environment } from 'src/environments/environment';
+import { MapService } from 'src/app/services/map/map.service';
 
 @Component({
     selector: 'app-map',
@@ -12,13 +13,16 @@ import { environment } from 'src/environments/environment';
 export class MapComponent implements OnInit {
     map: mapboxgl.Map;
 
-    constructor() { }
+    constructor(
+        private mapService: MapService
+    ) { }
 
     ngOnInit(): void {
         this.initialiseMap();
         this.geocoder();
         this.geoLocate();
         this.navigationControls();
+        this.getPackageLayer();
     }
 
     initialiseMap(): void {
@@ -46,12 +50,60 @@ export class MapComponent implements OnInit {
         this.map.addControl(
             new MapboxGeocoder({
                 accessToken: environment.MAP_KEY,
-                mapboxgl
+                mapboxgl,
+                countries: 'gb',
+                bbox: [-3.320618, 55.883784, -3.057632, 55.988396],
             })
         );
     }
 
     navigationControls(): void {
         this.map.addControl(new mapboxgl.NavigationControl());
+    }
+
+    getPackageLayer(): void {
+        this.map.on('load', () => {
+            this.mapService.getSelectedPackages().subscribe(data => this.packageLayer(data));
+        });
+    }
+
+    packageLayer(data): void {
+        const source = {
+            type: 'geojson',
+            data: {
+                type: 'FeatureCollection',
+                features: data
+            }
+        };
+        console.log(source);
+        this.map.addSource('packageSource', source);
+        this.map.addLayer({
+            id: 'packageSource',
+            type: 'symbol',
+            source: 'packageSource',
+            layout: {
+                'icon-image': '{icon}-15',
+            }
+        });
+        this.map.on('click', 'packageSource', (e) => {
+            const coordinates = e.features[0].geometry.coordinates.slice();
+            const description = e.features[0].properties.description;
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+
+            new mapboxgl.Popup({ offset: 15 })
+                .setLngLat(coordinates)
+                .setHTML(description)
+                .addTo(this.map);
+        });
+
+        this.map.on('mouseenter', 'packageSource', () => {
+            this.map.getCanvas().style.cursor = 'pointer';
+        });
+
+        this.map.on('mouseleave', 'packageSource', () => {
+            this.map.getCanvas().style.cursor = '';
+        });
     }
 }

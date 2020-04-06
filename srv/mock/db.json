@@ -1,0 +1,34 @@
+{
+    "packages": [
+        {
+            "id": 1,
+            "title": "Edinburgh Castle",
+            "icon": "castle",
+            "description": "<p><a href=\"https://www.edinburghcastle.scot/\"><strong>Edinburgh Castle</strong></a> Visit Edinburgh's famous castle for a great family day out in Scotland. Book tickets through Fog Of Explore for a guaranteed entry.</p>",
+            "coordinates": [
+                -3.1999,
+                55.9486
+            ]
+        },
+        {
+            "id": 2,
+            "title": "National Museum of Scotland",
+            "icon": "museum",
+            "description": "<p><a href=\"https://www.nms.ac.uk/national-museum-of-scotland/\"><strong>National Museum of Scotland</strong></a>, we care for collections of national and international importance. Book tickets through Fog Of Explore and get fast track access.</p>",
+            "coordinates": [
+                -3.1906,
+                55.9470
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Palace of Holyroodhouse",
+            "icon": "castle",
+            "description": "<p><a href=\"https://www.rct.uk/visit/palace-of-holyroodhouse\"><strong>Palace of Holyroodhouse</strong></a> is the Queen's official residence in Edinburgh and the home of Scottish royal history. Book tickets through Fog Of Explore and get fast track access.</p>",
+            "coordinates": [
+                -3.1723,
+                55.9527
+            ]
+        }
+    ]
+}
