@@ -1,0 +1,31 @@
+{
+    "packages": [
+        {
+            "id": 1,
+            "title": "Title",
+            "description": "Description",
+            "coordinates": [
+                -77.03238901390978,
+                38.913188059745586
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Title",
+            "description": "Description",
+            "coordinates": [
+                -77.03238901390978,
+                38.913188059745586
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Title",
+            "description": "Description",
+            "coordinates": [
+                -77.03238901390978,
+                38.913188059745586
+            ]
+        }
+    ]
+}
