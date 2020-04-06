@@ -46,7 +46,9 @@ export class MapComponent implements OnInit {
         this.map.addControl(
             new MapboxGeocoder({
                 accessToken: environment.MAP_KEY,
-                mapboxgl
+                mapboxgl,
+                countries: 'gb',
+                bbox: [-3.320618, 55.883784, -3.057632, 55.988396],
             })
         );
     }
