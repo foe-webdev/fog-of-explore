@@ -1,0 +1,36 @@
+.mobile-tabs {
+    align-items: center;
+    border-top: 1px solid #e2e2e2;
+    display: flex;
+    height: 64px;
+    justify-content: space-evenly;
+    overflow-wrap: break-word;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+
+    &__icon {
+        color: rgb(140, 140, 140);
+        height: 27px;
+        margin-bottom: 3px;
+    }
+
+    &__label {
+        color: rgb(140, 140, 140);
+        font-size: 12px;
+    }
+
+    &__button {
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+
+        &--active,
+        &:hover {
+            .mobile-tabs__label,
+            .mobile-tabs__icon {
+                color: var(--primary-color);
+            }
+        }
+    }
+}
