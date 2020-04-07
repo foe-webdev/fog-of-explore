@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, HostListener } from '@angular/core';
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { environment } from 'src/environments/environment';
@@ -12,6 +12,7 @@ import { MapService } from 'src/app/services/map/map.service';
 })
 export class MapComponent implements OnInit {
     map: mapboxgl.Map;
+    view: string;
 
     constructor(
         private mapService: MapService
@@ -25,7 +26,13 @@ export class MapComponent implements OnInit {
         this.getPackageLayer();
     }
 
+    @HostListener('window:resize', ['$event'])
+    resizeMap() {
+        this.view = `${window.innerHeight - 128}px`;
+    }
+
     initialiseMap(): void {
+        this.resizeMap();
         mapboxgl.accessToken = environment.MAP_KEY;
         this.map = new mapboxgl.Map({
             container: 'map',
