@@ -11,6 +11,10 @@ const routes: Routes = [
         path: 'discover',
         loadChildren: () => import('./pages/discover/discover.module').then(m => m.DiscoverModule)
     },
+    {
+        path: 'profile',
+        loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule)
+    },
     { path: '**', redirectTo: 'explore' }
 ];
 

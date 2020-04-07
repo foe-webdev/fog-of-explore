@@ -11,11 +11,11 @@ export class ExploreComponent implements OnInit {
     constructor() { }
 
     ngOnInit(): void {
-        this.resizeMap();
+        this.dynamicView();
     }
 
     @HostListener('window:resize', ['$event'])
-    resizeMap() {
+    dynamicView() {
         this.view = `${window.innerHeight - 128}px`;
     }
 }

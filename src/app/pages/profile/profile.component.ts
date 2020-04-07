@@ -1,11 +1,11 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
-    selector: 'app-discover',
-    templateUrl: './discover.component.html',
-    styleUrls: ['./discover.component.scss']
+    selector: 'app-profile',
+    templateUrl: './profile.component.html',
+    styleUrls: ['./profile.component.scss']
 })
-export class DiscoverComponent implements OnInit {
+export class ProfileComponent implements OnInit {
     view: string;
 
     constructor() { }
