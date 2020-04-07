@@ -26,13 +26,9 @@ export class MapComponent implements OnInit {
         this.getPackageLayer();
     }
 
-    @HostListener('window:resize', ['$event'])
-    resizeMap() {
-        this.view = `${window.innerHeight - 128}px`;
-    }
+
 
     initialiseMap(): void {
-        this.resizeMap();
         mapboxgl.accessToken = environment.MAP_KEY;
         this.map = new mapboxgl.Map({
             container: 'map',
