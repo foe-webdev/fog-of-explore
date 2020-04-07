@@ -29,7 +29,7 @@ export class MapComponent implements OnInit {
         mapboxgl.accessToken = environment.MAP_KEY;
         this.map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/foewebdev/ck8ipc31333gk1inygvqx6o1u',
+            style: 'mapbox://styles/foewebdev/ck8puvvxj058m1ip8rrznk34c',
             center: [-3.1883, 55.9533],
             zoom: 12
         });
