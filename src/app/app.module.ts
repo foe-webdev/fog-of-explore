@@ -9,11 +9,13 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { MobileTabsComponent } from './components/mobile-tabs/mobile-tabs.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        ToolbarComponent
+        ToolbarComponent,
+        MobileTabsComponent
     ],
     imports: [
         BrowserModule,
