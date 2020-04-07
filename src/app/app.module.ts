@@ -9,16 +9,23 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+<<<<<<< HEAD
 import { DiscoveryComponent } from './discovery/discovery.component';
 import {MatListModule} from '@angular/material/list';
 import { DiscoverySidenavComponent } from './discovery-sidenav/discovery-sidenav.component';
+=======
+>>>>>>> added button to open discovery drawer (#13)
 
 @NgModule({
     declarations: [
         AppComponent,
+<<<<<<< HEAD
         ToolbarComponent,
         DiscoveryComponent,
         DiscoverySidenavComponent
+=======
+        ToolbarComponent
+>>>>>>> added button to open discovery drawer (#13)
     ],
     imports: [
         BrowserModule,
