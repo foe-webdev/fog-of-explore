@@ -20,6 +20,7 @@ import { MobileTabsComponent } from './components/mobile-tabs/mobile-tabs.compon
         ToolbarComponent,
         DiscoveryComponent,
         DiscoverySidenavComponent
+        MobileTabsComponent
     ],
     imports: [
         BrowserModule,
