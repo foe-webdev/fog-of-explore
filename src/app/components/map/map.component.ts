@@ -70,7 +70,10 @@ export class MapComponent implements OnInit {
 
     getPackageLayer(): void {
         this.map.on('load', () => {
-            this.mapService.getSelectedPackages().subscribe(data => this.packageLayer(data));
+            this.mapService.getSelectedPackages().subscribe(data => {
+                this.packageLayer(data);
+                this.getDirections(data);
+            });
         });
     }
 
@@ -94,14 +97,15 @@ export class MapComponent implements OnInit {
         });
         this.map.on('click', 'packageSource', (e) => {
             const coordinates = e.features[0].geometry.coordinates.slice();
-            const description = e.features[0].properties.description;
+            const title = e.features[0].properties.title;
+            // const description = e.features[0].properties.description;
             while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
                 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
             }
 
             new mapboxgl.Popup({ offset: 15 })
                 .setLngLat(coordinates)
-                .setHTML(description)
+                .setHTML(title)
                 .addTo(this.map);
         });
 
@@ -112,5 +116,54 @@ export class MapComponent implements OnInit {
         this.map.on('mouseleave', 'packageSource', () => {
             this.map.getCanvas().style.cursor = '';
         });
+    }
+
+    getDirections(data): void {
+        const coords: any[] = [];
+        for (const [_, val] of Object.entries(data)) {
+            const feature: any = val;
+            coords.push(feature.geometry.coordinates);
+        }
+        const profile = 'mapbox/walking';
+        const coordinates = coords.join(';');
+        this.mapService.getDirections(profile, coordinates).subscribe(nav => this.directions(nav));
+    }
+
+    directions(data): void {
+        const layers = this.map.getStyle().layers;
+        // Find the index of the first symbol layer in the map style
+        let firstSymbolId;
+        for (const [_, val] of Object.entries(layers)) {
+            const layer: any = val;
+            if (layer.id === 'packageSource') {
+                firstSymbolId = layer.id;
+                break;
+            }
+        }
+        const source = {
+            type: 'geojson',
+            data: {
+                type: 'Feature',
+                properties: {},
+                geometry: {
+                    type: 'LineString',
+                    coordinates: data.routes[0].geometry.coordinates
+                }
+            }
+        };
+        this.map.addSource('routeSource', source);
+        this.map.addLayer({
+            id: 'route',
+            type: 'line',
+            source: 'routeSource',
+            layout: {
+                'line-join': 'round',
+                'line-cap': 'round'
+            },
+            paint: {
+                'line-color': '#00bcd4',
+                'line-width': 4
+            }
+        }, firstSymbolId);
     }
 }
