@@ -9,11 +9,16 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { DiscoveryComponent } from './discovery/discovery.component';
+import {MatListModule} from '@angular/material/list';
+import { DiscoverySidenavComponent } from './discovery-sidenav/discovery-sidenav.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        ToolbarComponent
+        ToolbarComponent,
+        DiscoveryComponent,
+        DiscoverySidenavComponent
     ],
     imports: [
         BrowserModule,
@@ -21,6 +26,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
         BrowserAnimationsModule,
         MatToolbarModule,
         HttpClientModule,
+        MatListModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     ],
     providers: [],
