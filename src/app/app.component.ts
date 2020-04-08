@@ -6,6 +6,7 @@ import { Platform } from '@angular/cdk/platform';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
+<<<<<<< HEAD
 export class AppComponent {
 
     constructor(
@@ -16,3 +17,6 @@ export class AppComponent {
         return this.platform.ANDROID || this.platform.IOS;
     }
 }
+=======
+export class AppComponent {}
+>>>>>>> added button to open discovery drawer

@@ -12,6 +12,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { DiscoveryComponent } from './discovery/discovery.component';
 import {MatListModule} from '@angular/material/list';
 import { DiscoverySidenavComponent } from './discovery-sidenav/discovery-sidenav.component';
+import { MobileTabsComponent } from './components/mobile-tabs/mobile-tabs.component';
 
 @NgModule({
     declarations: [
