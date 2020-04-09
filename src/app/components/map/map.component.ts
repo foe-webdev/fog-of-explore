@@ -13,6 +13,7 @@ import { MapService } from 'src/app/services/map/map.service';
 export class MapComponent implements OnInit {
     map: mapboxgl.Map;
     view: string;
+    coords: number[];
 
     constructor(
         private mapService: MapService
@@ -24,6 +25,14 @@ export class MapComponent implements OnInit {
         this.geoLocate();
         this.navigationControls();
         this.getPackageLayer();
+        this.showCoords();
+    }
+
+    // Place holder
+    showCoords() {
+        this.map.on('click', (e) => {
+            this.coords = e.lngLat;
+        });
     }
 
     @HostListener('window:resize', ['$event'])
@@ -36,7 +45,7 @@ export class MapComponent implements OnInit {
         mapboxgl.accessToken = environment.MAP_KEY;
         this.map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/foewebdev/ck8puvvxj058m1ip8rrznk34c',
+            style: 'mapbox://styles/foewebdev/ck8pwejsg0drz1imn1u2h5gcf',
             center: [-3.1883, 55.9533],
             zoom: 12
         });
