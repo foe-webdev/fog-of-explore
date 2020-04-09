@@ -82,7 +82,7 @@
         },
         {
             "id": 9,
-            "title": "John Knox House",
+            "title": "John Knox",
             "icon": "castle",
             "description": "",
             "coordinates": [
@@ -92,13 +92,43 @@
         },
         {
             "id": 10,
-            "title": "Scottish Parliament Building",
+            "title": "Scottish Parliament",
             "icon": "castle",
             "description": "",
             "coordinates": [
                 -3.1807576,
                 55.9509998
             ]
-        }
+        },
+        {
+            "coordinates": [
+              -3.1854,
+              55.9504
+            ],
+            "description": "<p><a href=\"https://www.visitscotland.com/info/food-drink/the-worlds-end-bar-p1715171\"><strong>The World end's pub</strong></a> The World's End is a traditional Scottish bar set on Edinburgh's historic Royal Mile.</p>",
+            "icon": "castle",
+            "id": 11,
+            "title": "The world's end pub"
+          },
+          {
+            "coordinates": [
+              -3.1909,
+              55.9495
+            ],
+            "description": "<p><a href=\"https://stgilescathedral.org.uk\"><strong>St Giles catheral</strong></a> is the High Kirk of Edinburgh positioned at the heart of the Scottish capital. St Giles’ was founded in 1124, and in the 16th century became the focal point of the Scottish Reformation.</p>",
+            "icon": "castle",
+            "id": 12,
+            "title": "St Giles catherdal"
+          },
+          {
+            "coordinates": [
+              -3.1905,
+              55.9499
+            ],
+            "description": "<p><a href=\"https://www.realmarykingsclose.com\"><strong>The Real Mary King's Close</strong></a> Experience over 400 years of history, and discover the stories of your character guide.</p>",
+            "icon": "castle",
+            "id": 13,
+            "title": "Mary King's Close"
+          }
     ]
 }
