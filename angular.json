@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "fog-of-explore": {
@@ -127,6 +127,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "fog-of-explore"
+    }
+  },
+  "defaultProject": "fog-of-explore",
+  "cli": {
+    "analytics": "019bbd6b-b18d-4aec-9812-5284237c6fc1"
+  }
 }
